@@ -53,8 +53,33 @@ for (const i of spAll) {
 }
 
 //parent and children select
-const parent = document.querySelector("bdy");
-const children = parent.children;
-console.log(children)
 
+
+//parent to children
+const parent = document.querySelector("#bdy");
+const children = parent.children;
+console.log(children[1])
+
+
+const grandParent = document.querySelector("#bdy");
+// const newparent = grandParent.children;
+// const newchildren = newparent[1].children;
+const newchildren = grandParent.querySelectorAll(".item");
+console.log(newchildren)
+//child to grand parent
+const cld = document.querySelector("#hdr");
+const prn = cld.parentElement;
+console.log(prn);
+
+//child to grand parent 2nd way 
+const cl = document.querySelector('.itm');
+const gp = cl.closest('#bdy')
+console.log(gp);
+
+//next siblings selector 
+const s1 = document.querySelector('.itm');
+const s2 = s1.nextElementSibling;
+const s3 = s2.previousElementSibling;
+console.log(s2.innerHTML);
+console.log(s3.innerHTML);
 
