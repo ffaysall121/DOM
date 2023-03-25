@@ -1,4 +1,4 @@
-document.body.contentEditable = true;
+// document.body.contentEditable = true;
 // console.log(document.all);
 //document.all look like Array But its not Array,its a one kind of list
 // console.log(typeof(document.all));
@@ -83,3 +83,120 @@ const s3 = s2.previousElementSibling;
 console.log(s2.innerHTML);
 console.log(s3.innerHTML);
 
+
+//........create html element using javascript..........
+
+const divElement = document.createElement('div');
+divElement.className = 'content';
+divElement.setAttribute('id', 'content');
+divElement.setAttribute('title', 'navigation');
+
+
+const cnt = document.querySelector("#bdy");
+const hd = document.querySelector("#hdr");
+cnt.insertBefore(divElement,hd);
+const footer = document.createElement('h2');
+// cnt.appendChild(footer);//add as a last child to the parent as html element and only one child can added
+cnt.append('Faysal Ahmed',footer);//add as a last child to the parent and add html one more element,text at a time
+
+ 
+
+//............. event listener...........
+
+//....................button event..............
+const handleClick = document.querySelector("#btn")
+handleClick.addEventListener('click',(event)=>{
+       console.log(event)
+        document.querySelector("#btn").style.padding="10px";
+
+    //    document.querySelector("#btn").style.backgroundColor="yellow";
+    
+   
+})
+handleClick.addEventListener('dblclick',(event)=>{
+    console.log(event)
+    document.querySelector("#btn").style.padding="50px";
+   
+})
+
+
+handleClick.addEventListener('mousedown',(event)=>{
+    
+    document.querySelector("#btn").style.backgroundColor="gray";
+   
+})
+
+handleClick.addEventListener('mouseup',(event)=>{
+    
+    document.querySelector("#btn").style.backgroundColor="green";
+   
+})
+
+// handleClick.addEventListener('mouseenter',(event)=>{
+    
+//     document.querySelector("#btn").style.border="10px solid red";
+   
+// })
+
+// handleClick.addEventListener('mouseleave',(event)=>{
+    
+//     document.querySelector("#btn").style.border="10px solid blue";
+   
+// })
+handleClick.addEventListener('mouseover',(event)=>{
+    
+    document.querySelector("#btn").style.border="10px solid blue";
+   
+})
+handleClick.addEventListener('mouseout',(event)=>{
+    
+    document.querySelector("#btn").style.border="10px solid yellow";
+   
+})
+handleClick.addEventListener('mousemove',(event)=>{
+    
+    console.log(event);
+   
+})
+
+//....................input event..............
+
+// const inputKeys = document.querySelector("#ipt");
+// inputKeys.addEventListener('keydown',(event)=>{
+//  console.log(event);
+// })
+// inputKeys.addEventListener('keyup',(event)=>{
+//     console.log(event);
+// })
+// inputKeys.addEventListener('keypress',(event)=>{
+//     console.log(event);
+// })
+// inputKeys.addEventListener('focus',(event)=>{
+//     console.log(event);
+// })
+// inputKeys.addEventListener('blur',(event)=>{
+//     console.log(event);
+// })
+// inputKeys.addEventListener('cut',(event)=>{
+//     console.log(event);
+// })
+// inputKeys.addEventListener('paste',(event)=>{
+//     console.log(event);
+// })
+// inputKeys.addEventListener('input',(event)=>{
+//     console.log(event);
+// })
+// inputKeys.addEventListener('input',(event)=>{
+//     console.log(event.target);
+// })
+// inputKeys.addEventListener('input',(event)=>{
+//     console.log(event.target.value);
+// })
+
+const btnClick = document.querySelector("#btn")
+
+btnClick.addEventListener('submit',(event)=>{
+    // event.preventDefault();
+    console.log(event.target);
+    console.log(event.target.value);
+})
